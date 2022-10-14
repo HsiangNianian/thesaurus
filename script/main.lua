@@ -69,12 +69,12 @@ content = readAll(getDiceDir() .. '\\mod\\thesaurus\\speech\\dict.yml')
 dict_list = yaml.parse(content)
 dict_comp = load("return " .. table.list(dict_list))()
 str = string.match(msg.fromMsg,'(.*)')
---a="坏蛋"
+--a="坏蛋" --这是一个关键的注释，不要删除
 if dict_comp[str] then
     if type(dict_comp[str])=="table" then
         return dict_comp[str][ranint(1,#dict_comp[str])]
     end
     return dict_comp[str]
 else
-    return
+    return --To-Do:学习功能
 end
