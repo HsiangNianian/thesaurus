@@ -3,7 +3,7 @@ msg_reply.main = {
         regex = { "(.*)" }
     },
     limit = {
-        cd = 5
+        cd = 2
     },
     echo = { lua = "main" }
 }

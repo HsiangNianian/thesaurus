@@ -70,6 +70,14 @@ content = readAll(getDiceDir() .. '\\mod\\thesaurus\\speech\\dict.yml')
 dict_list = yaml.parse(content)
 
 dict_comp = load("return " .. table.list(dict_list))()
---[[
-    wen
-]]
+
+dict_keys = table.keys(dict_list)
+
+str = string.match(msg.fromMsg,'(.*)')
+
+a="坏蛋"
+if dict_comp[str] then
+    return dict_comp[str]
+else
+    return dict_comp[str]
+end
