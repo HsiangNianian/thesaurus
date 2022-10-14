@@ -1,0 +1,9 @@
+{
+    "Lua.diagnostics.globals": [
+        "dict_comp_list",
+        "dict_list",
+        "content",
+        "found_comp",
+        "getDiceDir"
+    ]
+}
