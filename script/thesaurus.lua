@@ -770,7 +770,7 @@ local function parse(source)
 end
 
 ----------------------------
--- @thesaurus 
+-- @thesaurus
 -- @author Wazisora & 简律纯.
 ----------------------------
 
@@ -781,9 +781,9 @@ readAll = function(file)
   return content
 end
 
-content = readAll(getDiceDir() .. '\\mod\\thesaurus\\speech\\dict.yml')
-dict_list = parse(content)
-str = string.match(msg.fromMsg, '(.*)')
+local content = readAll(getDiceDir() .. '\\mod\\thesaurus\\speech\\dict.yml')
+local dict_list = parse(content)
+local str = string.match(msg.fromMsg, '(.*)')
 
 if dict_list[str] then
   if type(dict_list[str]) == "table" then

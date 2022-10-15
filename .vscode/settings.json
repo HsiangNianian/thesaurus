@@ -4,6 +4,13 @@
         "dict_list",
         "content",
         "found_comp",
-        "getDiceDir"
+        "getDiceDir",
+        "msg_reply",
+        "str"
+    ],
+    "Lua.diagnostics.disable": [
+        "deprecated",
+        "param-type-mismatch",
+        "need-check-nil"
     ]
 }
