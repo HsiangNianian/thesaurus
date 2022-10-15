@@ -2,7 +2,7 @@
 -- @thesaurus
 -- @author Wazisora & 简律纯.
 ----------------------------
-package.path = getDiceDir() .. '\\mod\\thesaurus\\script\\yaml.lua'
+package.path = getDiceDir() .. '/mod/thesaurus/script/yaml.lua'
 
 local yaml = require("yaml")
 
@@ -27,7 +27,7 @@ local split = function(str, delimiter)
   return arr
 end
 
-local content = readAll(getDiceDir() .. '\\mod\\thesaurus\\speech\\dict.yml')
+local content = readAll(getDiceDir() .. '/mod/thesaurus/speech/dict.yml')
 local dict_list = yaml.parse(content)
 local str = string.match(msg.fromMsg, '(.*)')
 
