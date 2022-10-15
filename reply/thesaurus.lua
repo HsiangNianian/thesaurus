@@ -1,9 +1,9 @@
-msg_reply.main = {
+msg_reply.thesaurus = {
     keyword = {
         regex = { "(.*)" }
     },
     limit = {
         cd = 2
     },
-    echo = { lua = "main" }
+    echo = { lua = "thesaurus" }
 }

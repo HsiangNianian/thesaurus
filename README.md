@@ -1,9 +1,10 @@
 # thesaurus
+
 ```json
 {
     "mod":"thesaurus",
     "author":"简律纯",
-    "ver":"1.0.4",
+    "ver":"1.0.8",
     "dice_build":612,
     "brief":"词典匹配回复",
     "comment":"",
@@ -23,7 +24,7 @@
 
 ### 1.2.1 cd
 
-直接修改`mod\thesaurus\reply\main.lua`第`6`行`cd`值。
+直接修改 `mod\thesaurus\reply\main.lua`第 `6`行 `cd`值。
 
 ```lua
 msg_reply.main = {
@@ -39,26 +40,45 @@ msg_reply.main = {
 
 ### 1.2.2 dict
 
-配置词典,因为暂时只是一个测试版本，所以你需要自行打开`mod\thesaurus\speech\dict.yml`并按照已有格式进行删改操作。当然，此文件遵守`yaml`语法。
+配置词典,因为暂时只是一个测试版本，所以你需要自行打开 `mod\thesaurus\speech\dict.yml`并按照已有格式进行删改操作。当然，此文件遵守 `yaml`语法。
 
 下面给出一些示例:
 
 > 一对一
+
 ```yaml
+# 这是一个注释
 思考: ummm...?
 ```
 
-> 多选一，目前仅支持嵌套一层
+> 多对一，仅支持嵌套一层
+
 ```yaml
 哦: 
   - 不要之说一个哦！很没礼貌的！
   - 哦...?
   - o~
+# 或采用行内表示法
+简子姐: ["欸...?","咦惹——"]
 ```
 
 > 转义
+
 ```yaml
 笨蛋: 
   - "{nick}你才是！"
   - "baka{at}"
+```
+
+> 换行符
+
+```yaml
+# |使输出时保留换行符\n
+早: |
+  bad
+  morning
+# >可在编写时直接表示换行
+晚上好: >
+  good
+  night
 ```

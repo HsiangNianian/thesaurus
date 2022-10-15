@@ -770,7 +770,22 @@ local function parse(source)
   return docs
 end
 
-return {
-  version = 0.1,
-  parse = parse,
-}
+readAll = function(file)
+    local f = io.open(file, "rb")
+    local content = f:read("*all")
+    f:close()
+    return content
+end
+
+content = readAll(getDiceDir() .. '\\mod\\thesaurus\\speech\\dict.yml')
+dict_list = parse(content)
+str = string.match(msg.fromMsg,'(.*)')
+
+if dict_list[str] then
+    if type(dict_list[str])=="table" then
+        return dict_list[str][ranint(1,#dict_list[str])]
+    end
+    return dict_list[str]
+else
+    return --To-Do:学习功能
+end
