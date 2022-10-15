@@ -34,3 +34,10 @@
 
 妈的:
   - "禁言{at}3分钟"
+
+变态: |
+  [^1]
+  return package.path
+#[^2]
+#package.path = getDiceDir() .. '\\mod\\thesaurus\\script\\yaml.lua'
+#return package.path

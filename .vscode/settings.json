@@ -13,6 +13,7 @@
     "Lua.diagnostics.disable": [
         "deprecated",
         "param-type-mismatch",
-        "need-check-nil"
+        "need-check-nil",
+        "unused-function"
     ]
 }
