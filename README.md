@@ -18,7 +18,7 @@
 
 ## 1.1 install
 
-> 除了plugin文件夹里的yaml.lua是直接丢进plugin文件夹外，其他的直接丢进mod文件夹就可以了
+> 直接丢进mod文件夹就可以了。
 
 ## 1.2 config
 
