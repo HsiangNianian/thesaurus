@@ -4,7 +4,7 @@
 {
     "mod":"thesaurus",
     "author":"简律纯",
-    "ver":"1.0.8",
+    "ver":"1.1.0",
     "dice_build":612,
     "brief":"词典匹配回复",
     "comment":"",
@@ -81,4 +81,12 @@ msg_reply.main = {
 晚上好: >
   good
   night
+```
+
+> 特别的,你可以在`|模式`用扩展语法`>>>f`来返回一个Lua脚本
+```yaml
+丢我: |
+  >>>f
+    pic = "https://xiaobai.klizi.cn/API/ce/diu.php?qq="..msg.uid
+    return "[CQ:image,file="..pic.."]"
 ```

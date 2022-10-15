@@ -1,4 +1,4 @@
-笨蛋: 
+笨蛋:
   - "{nick}你才是！"
   - "baka{at}"
 
@@ -9,7 +9,7 @@
 
 我不理解: "思考"
 
-哦: 
+哦:
   - 不要只说一个哦！很没礼貌的！
   - 哦...?
   - o~
@@ -20,7 +20,7 @@
   - "...?"
 
 # 或采用行内表示法
-简子姐: ["欸...?","咦惹——"]
+简子姐: ["欸...?", "咦惹——"]
 
 # |使输出时保留换行符\n
 早上好: |
@@ -35,9 +35,7 @@
 妈的:
   - "禁言{at}3分钟"
 
-变态: |
-  [^1]
-  return package.path
-  [^2]
-  package.path = getDiceDir() .. '\\mod\\thesaurus\\script\\yaml.lua'
-  return package.path
+丢我: |
+  >>>f
+    pic = "https://xiaobai.klizi.cn/API/ce/diu.php?qq="..msg.uid
+    return "[CQ:image,file="..pic.."]"
