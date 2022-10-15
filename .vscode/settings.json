@@ -6,7 +6,9 @@
         "found_comp",
         "getDiceDir",
         "msg_reply",
-        "str"
+        "str",
+        "msg",
+        "ranint"
     ],
     "Lua.diagnostics.disable": [
         "deprecated",
