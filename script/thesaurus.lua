@@ -13,7 +13,19 @@ local readAll = function(file)
 	return content
 end
 
-function split(str, pat)
+local getFileList = function(path, sub)
+	local sub = sub or ""
+	local a = io.popen("dir " .. path .. "\\" .. sub .. "/b")
+	local fileTable = {}
+
+	if a == nil then
+	else
+		for l in a:lines() do table.insert(fileTable, l) end
+	end
+	return fileTable
+end
+
+local function split(str, pat)
 	local t = {} -- NOTE: use {n = 0} in Lua-5.0
 	local fpat = "(.-)" .. pat
 	local last_end = 1
@@ -32,25 +44,29 @@ function split(str, pat)
 	return t
 end
 
-local content = readAll(getDiceDir() .. '/mod/thesaurus/speech/dict.yml')
-local dict_list = yaml.parse(content)
-local str = string.match(msg.fromMsg, '(.*)')
+local yml_list = getFileList(getDiceDir() .. '\\mod\\thesaurus\\speech', '*.yml')
 
-if dict_list[str] then
-	if type(dict_list[str]) == "table" then
-		if string.match(dict_list[str][ranint(1, #dict_list[str])], ">>>f") then
-			local split_table = split(dict_list[str], ">>>f")
-			return load(split_table[ranint(1, #split_table)])()
-		else
-			return dict_list[str][ranint(1, #dict_list[str])]
+if #yml_list ~= 0 then
+	for k,v in ipairs(yml_list) do
+		local content = readAll(getDiceDir() .. '/mod/thesaurus/speech/'..v)
+		local dict_list = yaml.parse(content)
+		local str = string.match(msg.fromMsg, '(.*)')
+
+		if dict_list[str] then
+			if type(dict_list[str]) == "table" then
+				if string.match(dict_list[str][ranint(1, #dict_list[str])], ">>>f") then
+					local split_table = split(dict_list[str], ">>>f")
+					return load(split_table[ranint(1, #split_table)])()
+				else
+					return dict_list[str][ranint(1, #dict_list[str])]
+				end
+			end
+			if string.match(dict_list[str], ">>>f") then
+				local split_table = split(dict_list[str], ">>>f")
+				return load(split_table[ranint(1, #split_table)])()
+			else
+				return dict_list[str]
+			end
 		end
 	end
-	if string.match(dict_list[str], ">>>f") then
-		local split_table = split(dict_list[str], ">>>f")
-		return load(split_table[ranint(1, #split_table)])()
-	else
-		return dict_list[str]
-	end
-else
-	return --To-Do:学习功能
 end
