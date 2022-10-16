@@ -4,7 +4,7 @@
 {
     "mod":"thesaurus",
     "author":"简律纯",
-    "ver":"1.2.0",
+    "ver":"1.2.2",
     "dice_build":612,
     "brief":"词典匹配回复",
     "comment":"",
@@ -14,15 +14,13 @@
 }
 ```
 
-# 1. Usage
-
-## 1.1 install
+# 1. install
 
 > 直接丢进mod文件夹就可以了。
 
-## 1.2 config
+# 2. settings
 
-### 1.2.1 cd
+## 2.1 cd
 
 直接修改 `mod\thesaurus\reply\main.lua`第 `6`行 `cd`值。
 
@@ -38,10 +36,9 @@ msg_reply.main = {
 }
 ```
 
-### 1.2.2 dict
+## 2.2 dict
 
 配置词典,因为暂时只是一个测试版本，所以你需要自行打开 `mod\thesaurus\speech\dict.yml`并按照已有格式进行删改操作。当然，此文件遵守 `yaml`语法。
-> 自`1.2.0(20221016)`版本以后支持了多个`*.yml`的 检索，当`dict1.yml`内没有触发词时会继续寻找剩下的`*.yml`文件直到有结果为止。
 
 下面给出一些示例:
 
@@ -91,3 +88,24 @@ msg_reply.main = {
     pic = "https://xiaobai.klizi.cn/API/ce/diu.php?qq="..msg.uid
     return "[CQ:image,file="..pic.."]"
 ```
+
+# 3. config
+
+> 一些原理和配置上的说明
+
+# 3.1 *.yml
+
+自`1.2.0(20221016)`版本以后支持了多个`*.yml`的 检索，当`dict1.yml`内没有触发词时会继续寻找剩下的`*.yml`文件直到有结果为止。
+
+关于词典触发词冲突
+
+试想这样一种情况，`dict1.yml`里写着这样一段:
+```yaml
+笨蛋: 你真的好笨呀
+```
+而`dict2.yml`里写着这样一段：
+```yaml
+笨蛋: 你也是呢~
+```
+那么当有人说出笨蛋时，会输出哪个？——答案是`dict1.yml`里的词典回复。
+为什么？——这和`getFileList(path,exp)`函数有关，**默认按照首字母排序机制**，如果有需求，在以后的版本里可以考虑加上其他排序方式来改变词典的重复词输出（比如按照修改时间排序等）。
