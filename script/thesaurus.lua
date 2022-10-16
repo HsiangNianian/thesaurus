@@ -18,32 +18,6 @@ local readAll = function(file)
 	return content
 end
 
-local getFileList_Windows = function(path, sub)
-	local sub = sub or ""
-	a = io.popen("dir " .. path .. "\\" .. sub .. " /b")
-	local fileTable = {}
-
-	if a == nil then
-	else
-		for l in a:lines() do table.insert(fileTable, l) end
-	end
-	return fileTable
-end
-
-local getFileList_Linux = function(path, sub)
-	local sub = sub or ""
-	os.execute("ls " .. path .. "/" .. sub ..
-		" > " .. getDiceDir() .. "/thesaurus.log")
-	a = readAll(getDiceDir() .. "/thesaurus.log")
-	local fileTable = {}
-
-	if a == nil then
-	else
-		for l in a:lines() do table.insert(fileTable, l) end
-	end
-	return fileTable
-end
-
 local function split(str, pat)
 	local t = {}
 	local fpat = "(.-)" .. pat
@@ -63,10 +37,30 @@ local function split(str, pat)
 	return t
 end
 
+local getFileList_Linux = function(path, sub)
+	local sub = sub or ""
+	os.execute("ls " .. path .. "/" .. sub ..
+		" > " .. getDiceDir() .. "/thesaurus.log")
+	a = readAll(getDiceDir() .. "/thesaurus.log")
+	return split(a, '\n')
+end
+
+local getFileList_Windows = function(path, sub)
+	local sub = sub or ""
+	a = io.popen("dir " .. path .. "\\" .. sub .. " /b")
+	local fileTable = {}
+
+	if a == nil then
+	else
+		for l in a:lines() do table.insert(fileTable, l) end
+	end
+	return fileTable
+end
+
 if _FRAMEWORK == "Windows" then
 	yml_list = getFileList_Windows(getDiceDir() .. '\\mod\\thesaurus\\speech', '*.yml')
 elseif _FRAMEWORK == "Linux" then
-	yml_list = getFileList_Linux(getDiceDir() .. '\\mod\\thesaurus\\speech')
+	yml_list = getFileList_Linux(getDiceDir() .. '/mod/thesaurus/speech')
 else
 	return "笨蛋Master是不是写错了_FRAMEWORK配置呀"
 end
