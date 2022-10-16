@@ -26,7 +26,7 @@ local getFileList = function(path, sub)
 end
 
 local function split(str, pat)
-	local t = {} -- NOTE: use {n = 0} in Lua-5.0
+	local t = {}
 	local fpat = "(.-)" .. pat
 	local last_end = 1
 	local s, e, cap = str:find(fpat, 1)
@@ -47,8 +47,8 @@ end
 local yml_list = getFileList(getDiceDir() .. '\\mod\\thesaurus\\speech', '*.yml')
 
 if #yml_list ~= 0 then
-	for k,v in ipairs(yml_list) do
-		local content = readAll(getDiceDir() .. '/mod/thesaurus/speech/'..v)
+	for k, v in ipairs(yml_list) do
+		local content = readAll(getDiceDir() .. '/mod/thesaurus/speech/' .. v)
 		local dict_list = yaml.parse(content)
 		local str = string.match(msg.fromMsg, '(.*)')
 
