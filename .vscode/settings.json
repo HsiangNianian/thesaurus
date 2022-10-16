@@ -8,12 +8,16 @@
         "msg_reply",
         "str",
         "msg",
-        "ranint"
+        "ranint",
+        "sendMsg",
+        "a",
+        "yml_list"
     ],
     "Lua.diagnostics.disable": [
         "deprecated",
         "param-type-mismatch",
         "need-check-nil",
-        "unused-function"
+        "unused-function",
+        "redundant-parameter"
     ]
 }

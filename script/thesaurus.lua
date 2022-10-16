@@ -2,6 +2,11 @@
 -- @thesaurus
 -- @author Wazisora & 简律纯.
 ----------------------------
+
+---------settings-----------
+-- @config 配置项
+_FRAMEWORK = "Windows"
+----------------------------
 package.path = getDiceDir() .. '/mod/thesaurus/script/yaml.lua'
 
 local yaml = require("yaml")
@@ -13,9 +18,23 @@ local readAll = function(file)
 	return content
 end
 
-local getFileList = function(path, sub)
+local getFileList_Windows = function(path, sub)
 	local sub = sub or ""
-	local a = io.popen("dir " .. path .. "\\" .. sub .. "/b")
+	a = io.popen("dir " .. path .. "\\" .. sub .. " /b")
+	local fileTable = {}
+
+	if a == nil then
+	else
+		for l in a:lines() do table.insert(fileTable, l) end
+	end
+	return fileTable
+end
+
+local getFileList_Linux = function(path, sub)
+	local sub = sub or ""
+	os.execute("ls " .. path .. "/" .. sub ..
+		" > " .. getDiceDir() .. "/thesaurus.log")
+	a = readAll(getDiceDir() .. "/thesaurus.log")
 	local fileTable = {}
 
 	if a == nil then
@@ -44,7 +63,13 @@ local function split(str, pat)
 	return t
 end
 
-local yml_list = getFileList(getDiceDir() .. '\\mod\\thesaurus\\speech', '*.yml')
+if _FRAMEWORK == "Windows" then
+	yml_list = getFileList_Windows(getDiceDir() .. '\\mod\\thesaurus\\speech', '*.yml')
+elseif _FRAMEWORK == "Linux" then
+	yml_list = getFileList_Linux(getDiceDir() .. '\\mod\\thesaurus\\speech')
+else
+	return "笨蛋Master是不是写错了_FRAMEWORK配置呀"
+end
 
 if #yml_list ~= 0 then
 	for k, v in ipairs(yml_list) do
