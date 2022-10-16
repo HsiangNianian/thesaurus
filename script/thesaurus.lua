@@ -6,6 +6,7 @@
 ---------settings-----------
 -- @config 配置项
 _FRAMEWORK = "Windows"
+msg.ignored = true
 ----------------------------
 package.path = getDiceDir() .. '/mod/thesaurus/script/yaml.lua'
 
@@ -72,7 +73,7 @@ if #yml_list ~= 0 then
 		local str = string.match(msg.fromMsg, '(.*)')
 
 		if dict_list[str] then
-			if type(dict_list[str]) == "table" then
+			if type(dict_list[str]) == "table" then  
 				if string.match(dict_list[str][ranint(1, #dict_list[str])], ">>>f") then
 					local split_table = split(dict_list[str], ">>>f")
 					return load(split_table[ranint(1, #split_table)])()
