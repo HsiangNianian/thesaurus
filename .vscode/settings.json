@@ -11,13 +11,16 @@
         "ranint",
         "sendMsg",
         "a",
-        "yml_list"
+        "yml_list",
+        "path",
+        "cmd"
     ],
     "Lua.diagnostics.disable": [
         "deprecated",
         "param-type-mismatch",
         "need-check-nil",
         "unused-function",
-        "redundant-parameter"
+        "redundant-parameter",
+        "undefined-field"
     ]
 }

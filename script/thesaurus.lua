@@ -9,7 +9,8 @@ _FRAMEWORK = "Windows"
 msg.ignored = true
 _REGEX = true
 ----------------------------
-package.path = getDiceDir() .. '/mod/thesaurus/script/yaml.lua'
+require "FuncLib"
+package.path = getDiceDir() .. "/mod/thesaurus/script/yaml.lua"
 
 local yaml = require("yaml")
 
@@ -39,55 +40,71 @@ local function split(str, pat)
     return t
 end
 
-local getFileList_Linux = function(path, sub)
-    local sub = sub or ""
-    os.execute("ls " .. path .. "/" .. sub ..
-        " > " .. getDiceDir() .. "/thesaurus.log")
-    a = readAll(getDiceDir() .. "/thesaurus.log")
-    return split(a, '\n')
-end
-
-local getFileList_Windows = function(path, sub)
-    local sub = sub or ""
-    a = io.popen("dir " .. path .. "\\" .. sub .. " /b")
-    local fileTable = {}
-
-    if a == nil then
-    else
-        for l in a:lines() do table.insert(fileTable, l) end
+local map = function(t, fn)
+    for k, v in pairs(t) do
+        t[k] = fn(v, k)
     end
-    return fileTable
 end
+
+function keys(hashtable)
+    local keys = {}
+    for k, v in pairs(hashtable) do
+        keys[#keys + 1] = k
+    end
+    return keys
+end
+
+local _PATH
+local cmd
 
 if _FRAMEWORK == "Windows" then
-    yml_list = getFileList_Windows(getDiceDir() .. '\\mod\\thesaurus\\speech', '*.yml')
+    _PATH = getDiceDir() .. "\\mod\\thesaurus\\speech\\"
+    cmd = "dir " .. _PATH .. "*.yml" .. " /b > " .. _PATH .. "thesaurus.log"
 elseif _FRAMEWORK == "Linux" then
-    yml_list = getFileList_Linux(getDiceDir() .. '/mod/thesaurus/speech')
+    _PATH = getDiceDir() .. "/mod/thesaurus/speech/"
+    cmd = "ls " .. _PATH .. "*.yml" .. " > " .. _PATH .. "thesaurus.log"
 else
-    return "笨蛋Master是不是写错了_FRAMEWORK配置呀"
+    return "笨蛋Master真的有认真填写_FRAMEWORK配置项吗..."
 end
 
-if #yml_list ~= 0 then
-    for k, v in ipairs(yml_list) do
-        local content = readAll(getDiceDir() .. '/mod/thesaurus/speech/' .. v)
-        local dict_list = yaml.parse(content)
-        local str = string.match(msg.fromMsg, '(.*)')
-
-        if dict_list[str] then
-            if type(dict_list[str]) == "table" then
-                if string.match(dict_list[str][ranint(1, #dict_list[str])], ">>>f") then
-                    local split_table = split(dict_list[str], ">>>f")
-                    return load(split_table[ranint(1, #split_table)])()
-                else
-                    return dict_list[str][ranint(1, #dict_list[str])]
-                end
-            end
-            if string.match(dict_list[str], ">>>f") then
-                local split_table = split(dict_list[str], ">>>f")
-                return load(split_table[ranint(1, #split_table)])()
-            else
-                return dict_list[str]
-            end
+local getFileList = function(_FRAMEWORK)
+    os.execute(cmd)
+    txt = readAll(_PATH .. "thesaurus.log")
+    t = split(txt, "\n")
+    if _FRAMEWORK == "Linux" then
+        for k = 1, #t do
+            t[k] = t[k]:match(".*/(.+)$")
         end
     end
+    return t
 end
+
+yml_list = getFileList(_FRAMEWORK)
+
+-- if #yml_list ~= 0 then
+-- for k,v in ipairs(yml_list) do
+    local content = readAll(_PATH..yml_list[2])
+    return content
+--     local dict_list = yaml.parse(content)
+--     local str = string.match(msg.fromMsg, '(.*)')
+--     local comp_list = keys(dict_list)
+--     for k,v in ipairs(comp_list) do
+
+--         if string.match(str,v) then
+
+--             -- if type(dict_list[v]) == "table" then
+
+--             --     if string.match(dict_list[v][ranint(1, #dict_list[v])], ">>>f") then
+--             --         local split_table = split(dict_list[v], ">>>f")
+--             --         return load(split_table[ranint(1, #split_table)])()
+--             --     else
+--             --         return dict_list[v][ranint(1, #dict_list[v])]
+--             --     end
+--             -- else
+--                 return dict_list[v]
+--             -- end
+--         end
+--     end
+-- end
+
+-- end
