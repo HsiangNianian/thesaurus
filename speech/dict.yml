@@ -39,3 +39,6 @@
   >>>f
     pic = "https://xiaobai.klizi.cn/API/ce/diu.php?qq="..msg.uid
     return "[CQ:image,file="..pic.."]"
+
+\:
+  好
