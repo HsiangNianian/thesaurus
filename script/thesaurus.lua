@@ -14,7 +14,7 @@ package.path = getDiceDir() .. "/mod/thesaurus/script/yaml.lua"
 
 local yaml = require("yaml")
 
-read_file = function(path, mode)
+local function read_file(path, mode)
     local text = ""
     local file = io.open(path, mode)
     if (file ~= nil) then
