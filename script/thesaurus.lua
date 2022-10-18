@@ -80,6 +80,8 @@ os.execute(cmd)
 
 yml_list = getFileList(_PATH, _FRAMEWORK)
 
+sleepTime(ranint(100,2000))
+
 if #yml_list ~= 0 then
     for k, v in ipairs(yml_list) do
         local content = read_file(tostring(_PATH .. v))
