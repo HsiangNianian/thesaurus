@@ -4,7 +4,7 @@
 {
     "mod":"thesaurus",
     "author":"简律纯",
-    "ver":"2.0.2",
+    "ver":"2.0.3",
     "dice_build":612,
     "brief":"词典匹配回复",
     "comment":"",
@@ -13,6 +13,12 @@
     }
 }
 ```
+
+# To-Do
+
+- [ ] 词典白名单(这也是已知的一个bug)
+- [x] Regex 正则表达式
+- [x] 多`*.yml`文件读取
 
 # 1. install
 
