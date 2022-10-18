@@ -14,7 +14,11 @@
         "yml_list",
         "path",
         "cmd",
-        "sleepTime"
+        "sleepTime",
+        "file",
+        "txt",
+        "t",
+        "keys"
     ],
     "Lua.diagnostics.disable": [
         "deprecated",

@@ -13,6 +13,13 @@ package.path = getDiceDir() .. "/mod/thesaurus/script/yaml.lua"
 
 local yaml = require("yaml")
 
+local function write_file(path, text, mode)
+    file = io.open(path, mode) --"a"
+    io.output(file) -- 设置默认输出文件
+    io.write(text)
+    io.close()
+end
+
 local function read_file(path, mode)
     local text = ""
     local file = io.open(path, mode)
@@ -80,7 +87,7 @@ os.execute(cmd)
 
 yml_list = getFileList(_PATH, _FRAMEWORK)
 
-sleepTime(ranint(100,2000))
+sleepTime(ranint(100, 2000))
 
 if #yml_list ~= 0 then
     for k, v in ipairs(yml_list) do
@@ -106,7 +113,9 @@ if #yml_list ~= 0 then
                     end
                 end
             else
-                return --学习功能
+                return --学习功能:
+                            -- 问答词典
+                            -- 时间词典
             end
         end
     end
