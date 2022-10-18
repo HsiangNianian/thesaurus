@@ -114,8 +114,8 @@ if #yml_list ~= 0 then
                 end
             else
                 return --学习功能:
-                            -- 问答词典
-                            -- 时间词典
+                -- 问答词典
+                -- 时间词典
             end
         end
     end
