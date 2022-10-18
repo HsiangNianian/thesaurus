@@ -9,7 +9,6 @@ _FRAMEWORK = "Windows"
 msg.ignored = true
 _REGEX = true
 ----------------------------
-require "FuncLib"
 package.path = getDiceDir() .. "/mod/thesaurus/script/yaml.lua"
 
 local yaml = require("yaml")
