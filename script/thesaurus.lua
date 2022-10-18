@@ -105,6 +105,8 @@ if #yml_list ~= 0 then
                         return dict_list[v]
                     end
                 end
+            else
+                return --学习功能
             end
         end
     end

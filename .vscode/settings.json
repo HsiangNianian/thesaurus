@@ -13,7 +13,8 @@
         "a",
         "yml_list",
         "path",
-        "cmd"
+        "cmd",
+        "sleepTime"
     ],
     "Lua.diagnostics.disable": [
         "deprecated",
