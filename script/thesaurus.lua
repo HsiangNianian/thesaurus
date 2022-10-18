@@ -13,14 +13,14 @@ package.path = getDiceDir() .. "/mod/thesaurus/script/yaml.lua"
 
 local yaml = require("yaml")
 
-local function write_file(path, text, mode)
+local write_file = function(path, text, mode)
     file = io.open(path, mode) --"a"
     io.output(file) -- 设置默认输出文件
     io.write(text)
     io.close()
 end
 
-local function read_file(path, mode)
+local read_file = function(path, mode)
     local text = ""
     local file = io.open(path, mode)
     if (file ~= nil) then
@@ -32,7 +32,7 @@ local function read_file(path, mode)
     return tostring(text)
 end
 
-local function split(str, pat)
+local split = function(str, pat)
     local t = {}
     local fpat = "(.-)" .. pat
     local last_end = 1
@@ -51,7 +51,7 @@ local function split(str, pat)
     return t
 end
 
-function keys(hashtable)
+local keys = function(hashtable)
     local keys = {}
     for k, v in pairs(hashtable) do
         keys[#keys + 1] = k
