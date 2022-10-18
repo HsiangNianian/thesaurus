@@ -4,7 +4,7 @@
 {
     "mod":"thesaurus",
     "author":"简律纯",
-    "ver":"1.2.2",
+    "ver":"2.0.2",
     "dice_build":612,
     "brief":"词典匹配回复",
     "comment":"",
@@ -88,6 +88,15 @@ msg_reply.main = {
     pic = "https://xiaobai.klizi.cn/API/ce/diu.php?qq="..msg.uid
     return "[CQ:image,file="..pic.."]"
 ```
+
+> 使用正则
+
+在做到输出回复词可以多回复功能以后，为实现更加强大的匹配词设定，加入了正则表达式。
+你可以这样:
+```yaml
+^简子姐.*: ["欸...?", "咦惹——"]
+```
+当检测到有人发言符合`简子姐xxx`的时候即可触发回复。
 
 # 3. config
 
