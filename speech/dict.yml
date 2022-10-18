@@ -35,9 +35,16 @@
 妈的:
   - "禁言{at}3分钟"
 
-丢我: |
+^丢.*: |
   >>>f
-    pic = "https://xiaobai.klizi.cn/API/ce/diu.php?qq="..msg.uid
-    return "[CQ:image,file="..pic.."]"
-
-"1": 1 
+    if msg.fromMsg:match("%d+") then
+      pic = "https://xiaobai.klizi.cn/API/ce/diu.php?qq="..msg.fromMsg:match("%d+")
+      return "[CQ:image,file="..pic.."]"
+    else
+      pic = "https://xiaobai.klizi.cn/API/ce/diu.php?qq="..msg.uid
+      return "[CQ:image,file="..pic.."]"
+    end  
+  >>>f
+    return "{nick}笨蛋，{self}真的丢不动你啦..."
+    
+"1": 1
