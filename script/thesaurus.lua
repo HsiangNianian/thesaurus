@@ -44,12 +44,6 @@ local function split(str, pat)
     return t
 end
 
-local map = function(t, fn)
-    for k, v in pairs(t) do
-        t[k] = fn(v, k)
-    end
-end
-
 function keys(hashtable)
     local keys = {}
     for k, v in pairs(hashtable) do
