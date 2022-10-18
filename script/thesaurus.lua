@@ -5,9 +5,9 @@
 
 ---------settings-----------
 -- @config 配置项
-_FRAMEWORK = "Windows"
-msg.ignored = true
-_REGEX = true
+_FRAMEWORK = "Windows" -- 手机请使用"Linux"
+msg.ignored = true -- "禁止刷屏"
+_REGEX = true -- 一个没用的开关
 ----------------------------
 package.path = getDiceDir() .. "/mod/thesaurus/script/yaml.lua"
 
