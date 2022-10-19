@@ -1,6 +1,6 @@
 ----------------------------
 -- @thesaurus
--- @author Wazisora & 简律纯.
+-- @author WazuSora & 简律纯.
 ----------------------------
 
 ---------settings-----------
@@ -87,8 +87,6 @@ os.execute(cmd)
 
 yml_list = getFileList(_PATH, _FRAMEWORK)
 
-sleepTime(ranint(100, 2000))
-
 if #yml_list ~= 0 then
     for k, v in ipairs(yml_list) do
         local content = read_file(tostring(_PATH .. v))
@@ -112,8 +110,7 @@ if #yml_list ~= 0 then
                         return dict_list[v]
                     end
                 end
-            else
-                return --学习功能:
+            --else
                 -- 问答词典
                 -- 时间词典
             end
