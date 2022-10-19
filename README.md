@@ -142,3 +142,5 @@ msg_reply.main = {
 MA所搭载的Lua并没有`io.popen()`这样的函数，但是令人欣慰的是可以使用`os.execute()`，并且命令格式就是`Linux`系统命令。
 
 如果你是MA用户，可以把配置项里的`_FRAMEWORK`改成`"Linux"`，这样才可正常运行模块。
+
+#

@@ -1,0 +1,9 @@
+# 配置项，勿删！
+^Dict>.*: |
+  >>>f
+  local str=string.sub(msg.fromMsg,#"Dict>"+1)
+  if str == "list" then
+    return "词典列表:\n"..list
+  elseif str == "config" then
+    return "配置列表:\n"
+  end

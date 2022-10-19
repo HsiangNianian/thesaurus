@@ -5,9 +5,11 @@
 
 ---------settings-----------
 -- @config 配置项
-_FRAMEWORK = "Windows" -- 手机请使用"Linux"
 msg.ignored = true -- "禁止刷屏"
-_REGEX = true -- 一个没用的开关
+settings = {
+    _FRAMEWORK = "Windows", -- 手机请使用"Linux"
+    _REGEX = true -- 一个没用的开关
+}
 ----------------------------
 package.path = getDiceDir() .. "/mod/thesaurus/script/yaml.lua"
 
@@ -73,10 +75,10 @@ end
 local _PATH
 local cmd
 
-if _FRAMEWORK == "Windows" then
+if settings._FRAMEWORK == "Windows" then
     _PATH = getDiceDir() .. "\\mod\\thesaurus\\speech\\"
     cmd = "dir " .. _PATH .. "*.yml" .. " /b > " .. _PATH .. "thesaurus.log"
-elseif _FRAMEWORK == "Linux" then
+elseif settings._FRAMEWORK == "Linux" then
     _PATH = getDiceDir() .. "/mod/thesaurus/speech/"
     cmd = "ls " .. _PATH .. "*.yml" .. " > " .. _PATH .. "thesaurus.log"
 else
@@ -85,7 +87,8 @@ end
 
 os.execute(cmd)
 
-yml_list = getFileList(_PATH, _FRAMEWORK)
+yml_list = getFileList(_PATH, settings._FRAMEWORK)
+list = table.concat(yml_list, "\n")
 
 if #yml_list ~= 0 then
     for k, v in ipairs(yml_list) do
@@ -110,7 +113,7 @@ if #yml_list ~= 0 then
                         return dict_list[v]
                     end
                 end
-            --else
+                --else
                 -- 问答词典
                 -- 时间词典
             end
