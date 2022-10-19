@@ -15,7 +15,7 @@ local yaml = require("yaml")
 
 local write_file = function(path, text, mode)
     file = io.open(path, mode) --"a"
-    io.output(file) -- 设置默认输出文件
+    io.output(file)
     io.write(text)
     io.close()
 end
