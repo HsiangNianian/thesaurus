@@ -111,10 +111,10 @@ if #yml_list ~= 0 then
                         return load(split_table[ranint(1, #split_table)])()
                     else
                         return dict_list[v]
-                    end
+                    end 
                 end
                 --else
-                -- 问答词典
+                -- 问答词典 
                 -- 时间词典
             end
         end
