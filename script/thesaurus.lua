@@ -31,7 +31,7 @@ local read_file = function(path, mode)
     else
         return "没有该文件或文件内容为空哦"
     end
-    return tostring(text)
+    return text
 end
 
 local split = function(str, pat)
