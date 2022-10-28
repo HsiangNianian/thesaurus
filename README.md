@@ -3,10 +3,8 @@
 
 [![](https://img.shields.io/badge/github-repo-blue)](https://github.com/ssJSKFJDJ/thesaurus)
 [![GitHub contributors](https://img.shields.io/github/contributors/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/graphs/contributors)
-[![License](https://img.shields.io/github/license/ssJSKFJDJ/thesaurus.svg)](http://www.gnu.org/licenses)
-[![Downloads](https://img.shields.io/github/downloads/ssJSKFJDJ/thesaurus/total.svg)](https://github.com/ssJSKFJDJ/thesaurus/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/commits)
-[![last Version](https://img.shields.io/github/v/tag/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/tag)
+[![release](https://img.shields.io/github/v/release/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/release)
 
 ```json
 {
@@ -151,4 +149,6 @@ MA所搭载的Lua并没有`io.popen()`这样的函数，但是令人欣慰的是
 
 如果你是MA用户，可以把配置项里的`_FRAMEWORK`改成`"Linux"`，这样才可正常运行模块。
 
-#
+***
+
+未完待续...
