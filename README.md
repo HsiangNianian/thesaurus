@@ -1,4 +1,12 @@
 # thesaurus
+> 一定程度上弱化了reply的概念，同时也解决了MA不能在reply里设置Lua回复的bug。
+
+[![](https://img.shields.io/badge/github-repo-blue)](https://github.com/ssJSKFJDJ/thesaurus)
+[![GitHub contributors](https://img.shields.io/github/contributors/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/graphs/contributors)
+[![License](https://img.shields.io/github/license/ssJSKFJDJ/thesaurus.svg)](http://www.gnu.org/licenses)
+[![Downloads](https://img.shields.io/github/downloads/ssJSKFJDJ/thesaurus/total.svg)](https://github.com/ssJSKFJDJ/thesaurus/releases)
+[![GitHub last commit](https://img.shields.io/github/last-commit/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/commits)
+[![Release](https://img.shields.io/github/v/release/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/release)
 
 [![GitHub contributors](https://img.shields.io/github/contributors/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/graphs/contributors)
 [![License](https://img.shields.io/github/license/ssJSKFJDJ/thesaurus.svg)](http://www.gnu.org/licenses)
