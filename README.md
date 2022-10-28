@@ -3,10 +3,8 @@
 
 [![](https://img.shields.io/badge/github-repo-blue)](https://github.com/ssJSKFJDJ/thesaurus)
 [![GitHub contributors](https://img.shields.io/github/contributors/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/graphs/contributors)
-[![License](https://img.shields.io/github/license/ssJSKFJDJ/thesaurus.svg)](http://www.gnu.org/licenses)
-[![Downloads](https://img.shields.io/github/downloads/ssJSKFJDJ/thesaurus/total.svg)](https://github.com/ssJSKFJDJ/thesaurus/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/commits)
-[![last Version](https://img.shields.io/github/v/tag/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/tag)
+[![last Version](https://img.shields.io/github/v/tag/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/tag)[![Downloads](https://img.shields.io/github/downloads/ssJSKFJDJ/thesaurus/total.svg)](https://github.com/ssJSKFJDJ/thesaurus/releases)
 
 ```json
 {
