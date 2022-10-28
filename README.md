@@ -6,7 +6,7 @@
 [![License](https://img.shields.io/github/license/ssJSKFJDJ/thesaurus.svg)](http://www.gnu.org/licenses)
 [![Downloads](https://img.shields.io/github/downloads/ssJSKFJDJ/thesaurus/total.svg)](https://github.com/ssJSKFJDJ/thesaurus/releases)
 [![GitHub last commit](https://img.shields.io/github/last-commit/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/commits)
-[![Release](https://img.shields.io/github/v/release/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/release)
+[![last Version](https://img.shields.io/github/v/tag/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/tag)
 
 ```json
 {
