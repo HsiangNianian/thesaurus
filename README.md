@@ -30,7 +30,19 @@
 
 # 1. install
 
-> 直接丢进mod文件夹就可以了。
+- Dice版本2.6.5beta12(624+)以上安装方法:
+
+  1. 在 `./DiceQQ/conf/mod/source.list`文件内（没有mod文件夹和这文件就新建）输入 `https://ssjskfjdj.netlify.app/Module/`。
+  2. 使用 `.system load`命令重载bot，这样做的目的是为了让步骤1里的远程地址生效。
+  3. 对bot发送 `.mod get thesaurus`命令，等待安装。
+  4. 回到第二步，这样做的目的是为了让mod被加载。
+  5. Enjoy Your Self!
+- Dice版本2.6.4b(612+)以上安装方法：
+
+  1. 浏览器访问 `https://github.com/ssJSKFJDJ/thesaurus`并点击绿色按钮 `Code`下的 `Download Zip`按钮下载仓库压缩包。
+  2. 解压压缩包，将里面的文件和文件夹全部丢进 `./DiceQQ/mod/`文件夹内。
+  3. 使用 `.system load`命令重载。
+  4. Enjoy Your Self!
 
 # 2. settings
 
