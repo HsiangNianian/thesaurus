@@ -41,7 +41,7 @@
 妈的:
   - "禁言{at}1分钟"
 
-^丢.*: |
+^善美丢.*: |
   >>>f
     if msg.fromMsg:match("%d+") then
       pic = "https://xiaobai.klizi.cn/API/ce/diu.php?qq="..msg.fromMsg:match("%d+")
@@ -51,9 +51,9 @@
       return "[CQ:image,file="..pic.."]"
     end  
   >>>f
-    return "{nick}笨蛋，{self}真的丢不动你啦..."
+    return "{nick}笨蛋，{self}真的丢不动啦..."
 
-"善美":
+"^善美$":
   - 在哦~
   - "{nick}想我了？"
   - 我不在我不在x
