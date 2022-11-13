@@ -11,8 +11,7 @@ settings = {
     _REGEX = true -- 一个没用的开关
 }
 ----------------------------
-package.path = getDiceDir() .. "/mod/thesaurus/script/yaml.lua"
-
+package.path = getDiceDir() .. "/mod/thesaurus/script/?.lua"
 local yaml = require("yaml")
 
 local write_file = function(path, text, mode)
@@ -121,3 +120,4 @@ if #yml_list ~= 0 then
         end
     end
 end
+
