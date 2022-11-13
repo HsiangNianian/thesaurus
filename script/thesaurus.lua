@@ -119,5 +119,7 @@ if #yml_list ~= 0 then
             end
         end
     end
+else
+    return
 end
 
