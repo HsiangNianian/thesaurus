@@ -1,7 +1,7 @@
 # thesaurus
 > 一定程度上弱化了reply的概念，同时也解决了MA不能在reply里设置Lua回复的bug。
 
-[![](https://img.shields.io/github/issues/ssJSKFJDJ/thesaurus)](https://github.com/ssJSKFJDJ/thesaurus/issues) [![](https://img.shields.io/github/issues-pr/ssJSKFJDJ/thesaurus)](https://github.com/ssJSKFJDJ/thesaurus/pulls)[![GitHub last commit](https://img.shields.io/github/last-commit/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/commits) [![release](https://img.shields.io/github/v/release/ssJSKFJDJ/thesaurus.svg)](https://github.com/ssJSKFJDJ/thesaurus/releases) [![download](https://img.shields.io/github/downloads/ssJSKFJDJ/thesaurus/total.svg)](https://github.com/ssJSKFJDJ/thesaurus/releases/download/v2.0.3/thesaurus_v2.0.3.zip)
+[![](https://img.shields.io/github/issues/cypress0522/thesaurus)](https://github.com/cypress0522/thesaurus/issues) [![](https://img.shields.io/github/issues-pr/cypress0522/thesaurus)](https://github.com/cypress0522/thesaurus/pulls)[![GitHub last commit](https://img.shields.io/github/last-commit/cypress0522/thesaurus.svg)](https://github.com/cypress0522/thesaurus/commits) [![release](https://img.shields.io/github/v/release/cypress0522/thesaurus.svg)](https://github.com/cypress0522/thesaurus/releases) [![download](https://img.shields.io/github/downloads/cypress0522/thesaurus/total.svg)](https://github.com/cypress0522/thesaurus/releases/download/v2.0.3/thesaurus_v2.0.3.zip)
 
 ```json
 {
