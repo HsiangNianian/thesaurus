@@ -7,7 +7,7 @@
 {
     "mod":"thesaurus",
     "author":"简律纯",
-    "ver":"2.0.3",
+    "ver":"2.0.4",
     "dice_build":612,
     "brief":"词典匹配回复",
     "comment":"",
