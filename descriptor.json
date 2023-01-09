@@ -4,9 +4,9 @@
     "ver":"2.0.4",
     "dice_build":612,
     "brief":"词典匹配回复",
-    "repo":"https://github.com/ssJSKFJDJ/thesaurus.git",
+    "repo":"https://github.com/HsiangNianian/thesaurus.git",
     "comment":"",
     "helpdoc":{
-        "thesaurus":"https://github.com/A2C29K9/thesaurus"
+        "thesaurus":"https://github.com/HsiangNianian/thesaurus"
     }
 }
