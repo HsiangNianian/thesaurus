@@ -1,7 +1,7 @@
 # thesaurus
 > 一定程度上弱化了reply的概念，同时也解决了MA不能在reply里设置Lua回复的bug。
 
-[![](https://img.shields.io/github/issues/A2C29K9/thesaurus)](https://github.com/A2C29K9/thesaurus/issues) [![](https://img.shields.io/github/issues-pr/A2C29K9/thesaurus)](https://github.com/A2C29K9/thesaurus/pulls)[![GitHub last commit](https://img.shields.io/github/last-commit/A2C29K9/thesaurus.svg)](https://github.com/A2C29K9/thesaurus/commits) [![release](https://img.shields.io/github/v/release/A2C29K9/thesaurus.svg)](https://github.com/A2C29K9/thesaurus/releases) [![download](https://img.shields.io/github/downloads/A2C29K9/thesaurus/total.svg)](https://github.com/A2C29K9/thesaurus/releases/download/v2.0.3/thesaurus_v2.0.3.zip)
+[![](https://img.shields.io/github/issues/HsiangNianian/thesaurus)](https://github.com/HsiangNianian/thesaurus/issues) [![](https://img.shields.io/github/issues-pr/HsiangNianian/thesaurus)](https://github.com/HsiangNianian/thesaurus/pulls)[![GitHub last commit](https://img.shields.io/github/last-commit/HsiangNianian/thesaurus.svg)](https://github.com/HsiangNianian/thesaurus/commits) [![release](https://img.shields.io/github/v/release/HsiangNianian/thesaurus.svg)](https://github.com/HsiangNianian/thesaurus/releases) [![download](https://img.shields.io/github/downloads/HsiangNianian/thesaurus/total.svg)](https://github.com/HsiangNianian/thesaurus/releases/download/v2.0.3/thesaurus_v2.0.3.zip)
 
 ```json
 {
@@ -12,7 +12,7 @@
     "brief":"词典匹配回复",
     "comment":"",
     "helpdoc":{
-        "thesaurus":"https://github.com/A2C29K9/thesaurus"
+        "thesaurus":"https://github.com/HsiangNianian/thesaurus"
     }
 }
 ```
